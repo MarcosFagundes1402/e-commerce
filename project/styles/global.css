@@ -1,0 +1,148 @@
+:root {
+  --primary-color: #0369a1;
+  --primary-color-transparent: #036aa193;
+  --bg-color-primary: #082f49;
+  --bg-color-transparent: #082f4979;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Genos", sans-serif;
+}
+
+header {
+  height: 80px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+section{
+  width: 100vw;
+  height: 40vh;
+}
+
+/*Estilização menu*/
+.nav-list {
+  display: flex;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list li {
+  width: 100px;
+  height: 70%;
+  font-weight: 500;
+  margin-left: 20px;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.nav-list li:hover {
+  background-color: var(--bg-color-primary);
+  color: white;
+}
+
+.nav-list li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/*Estilização menu mobile*/
+.menu-mobile {
+  visibility: hidden;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+.menu-mobile.line{
+  transform-origin: center;
+}
+
+.menu-mobile div {
+  width: 32px;
+  height: 3px;
+  background-color: var(--bg-color-primary);
+  margin: 8px;
+}
+
+/*Estilização do icone do menu-mobile quando clica*/
+.menu-mobile.active .line:nth-child(1),
+.menu-mobile.active .line:nth-child(2) {
+  background-color: red;
+}
+.menu-mobile.active .line:nth-child(1){
+  transform:  translateY(5px) rotate(-45deg);
+}
+.menu-mobile.active .line:nth-child(2){
+  transform:  translateY(-5px) rotate(45deg);
+}
+
+.menu-mobile.active .line:nth-child(3){
+  display: none;
+}
+
+/*responsividade*/
+@media (max-width: 999px) {
+  nav {
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+  .nav-list.open {
+    visibility: visible;
+  }
+
+  .menu-mobile {
+    visibility: visible;
+  }
+
+  .nav-list {
+    position: absolute;
+    backdrop-filter: blur(10px);
+    top: 80px;
+    right: 0;
+    width: 100vw;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    visibility: hidden;
+    color: #fff;
+  }
+
+  .nav-list li {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-list li:hover {
+    background-color: var(--bg-color-primary);
+    color: white;
+  }
+}
+
+
